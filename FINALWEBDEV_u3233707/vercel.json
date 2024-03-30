@@ -1,4 +1,5 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/wwwroot/indexcs.html" }]
+    "rewrites": [
+        {"source": "/(.*)", "destination": "/"}
+    ]
 }
-
