@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FINALASSIGNMENT_u3233707</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FINALWEBDEV_u3233707.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="~/css/FinalStyle.css" />
+    <link rel="stylesheet" href="~/css/elastic-grid.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Niconne" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+</head>
+
+<body>
+     <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black" id="navbarcolor">
+            <div class="container-fluid navigation">
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between dropdown-content">
+                    <ul class="navbar-nav flex-grow-1">
+                       
+                        <li class="nav-item">
+                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="GenAI">AI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Jobs">Jobs</a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AddNewGenAIs" asp-action="Index">GenAI Sites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacts">Contacts</a>
+                        </li>
+
+
+                        
+
+                    </ul>
+
+                    <partial name="_LoginPartial"  />
+                    
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+   
+    <div class="main pb-0">
+        <main role="main" class="pb-0">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <div>
+
+    <footer class=" footer text-muted">
+        <div class="container-fluid row footer">
+            <div class="footercontainer col-md-3 col-sm-6 col-12">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Jobs">Jobs</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="AddNewGenAIs" asp-action="Index">GenAI Sites</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacts">Contact</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacts">About Us</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacts">Follow Us</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contacts">Copyright Info</a>
+            </div>
+                <div class="footercontainer col-md-3 col-sm-6 col-12">
+                    <i class="fa fa-book"></i>
+                    <i class="fa fa-reddit"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-linkedin"></i>
+            </div>
+        </div>
+    </footer>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/myjsfinal.js" asp-append-version="true"></script>
+    <script src="~/js/myjqueryfinal.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+    <script src="~/js/modernizr.custom.js"></script>
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/elastic_grid.min.js"></script>
+    
+
+
+</body>
+</html>

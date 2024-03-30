@@ -1,0 +1,45 @@
+﻿@model FINALWEBDEV_u3233707.Models.AddNewGenAI
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container-fluid background1">
+    <h1 id="heading1">Edit GenAI Website</h1>
+
+    <hr />
+    <div class="row justify-content-center mx-auto">
+        <div class="">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label asp-for="GenAIName" class="control-label text-white"></label>
+                    <input asp-for="GenAIName" class="form-control" class="inputsize" />
+                    <span asp-validation-for="GenAIName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Summary" class="control-label text-white"></label>
+                    <input asp-for="Summary" class="form-control" class="inputsize" />
+                    <span asp-validation-for="Summary" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label text-white">Upload image file</label>
+                    <input type="file" name="file" class="form-control"/>
+                </div>
+                <div class="form-group bottompadding">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+                <div>
+                    <a class="text-white" asp-action="Index">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   
+    <div class="bottompadding"></div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

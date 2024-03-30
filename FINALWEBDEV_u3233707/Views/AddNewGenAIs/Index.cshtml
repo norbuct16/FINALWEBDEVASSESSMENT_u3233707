@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FINALWEBDEV_u3233707.Models.AddNewGenAI>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container-fluid background5">
+<h1 id="heading1">Generative AI Websites</h1>
+  @{
+            if (User.Identity.IsAuthenticated)
+            {
+<p class="createanchor">
+    <a asp-action="Create" class="text-white-50 text1">Click here to add a new generative AI website</a>
+</p>
+
+<div class="container-fluid sitescontainer row">
+    @foreach (var item in Model)
+                {
+                    <div class="container imgcontainer  col-md-4 col-sm-12 col-12" id="@item.Id">
+                        <img class="sitesimg" src="@Url.Content(item.AnchorLink)" alt="Uploaded Image"/>
+                    </div>
+                    <div class="container genaidesc col-md-8 col-sm-12 col-12">
+                        <h4 class="sitestopic"> @Html.DisplayFor(modelItem => item.GenAIName)</h4>
+                        <p class="sitesdesc"> @Html.DisplayFor(modelItem => item.Summary) </p>
+                        <td>
+                            <a asp-action="IncreaseLike" asp-route-id="@item.Id" class="btn btn-primary">Like(@Html.DisplayFor(modelItem => item.Like))</a>
+                            @if (User.IsInRole("admin"))
+                            {
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
+                            }
+                            @if (User.IsInRole("admin"))
+                            {
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            }
+                        </td>
+                    </div>
+
+                }
+
+            </div>
+        }
+        else
+        {
+            <p class="para1 text-white paracentral">Please <a class="para1 text-white" asp-area="Identity" asp-page="/Account/Register">Register</a> or <a class="para1 text-white" asp-area="Identity" asp-page="/Account/Login">Login</a> to interact with Generative AI Websites.</p>
+        }
+
+
+    <div class="bottompadding"></div>
+
+
+
+@*
+    < table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GenAIName)
+            </th>
+            <th>
+               @Html.DisplayNameFor(model => model.GenAIName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenAIName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+                
+                
+                <img src="@Url.Content(item.ImagePath)" alt="Uploaded Image"/>
+                
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@

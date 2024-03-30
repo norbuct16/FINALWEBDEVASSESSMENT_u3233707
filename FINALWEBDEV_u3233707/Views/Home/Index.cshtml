@@ -1,0 +1,161 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container-fluid backgroundvid">
+
+
+    <video id="video" autoplay loop muted poster="~/videos/video.mp4">
+
+        <source src="~/videos/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="container justify-content-center">
+        <h3 id="heading1"> Generative AI Technology</h3>
+        <p class="text1">
+
+            Any time an AI technology is generating something on its own, it can be referred to as "generative AI."
+            This umbrella term includes learning algorithms that make predictions as well as those that can use
+            prompts to autonomously write articles and paint pictures.
+        <p class="text1 center">Techopedia</p>
+
+        </p>
+    </div>
+
+</div>
+
+
+<div class="container-fluid background1">
+    <div class="container padding gen genaitools row justify-content-center mx-auto ">
+
+        <div class="container imgcontainer justify-content-center mx-auto col-md-6 col-sm-12 col-12">
+            <img src="~/images/genai/bard_thumbnail.jpg" alt="Google Bard" class="image">
+            <img src="~/images/genai/midjourney_thumbnail.jpg" alt="Mid Journey" class="image">
+        </div>
+        <div class="container indexcontainer col-md-6 col-sm-12 col-12">
+            <h5 class="subheading">GenAI Tools</h5>
+            <p id="para1">
+                Generative AI tools refer to software or systems that use neural network techniques to
+                process and comprehend input data, subsequently producing meaningful responses.
+                <span class="italicize">Scribehow </span>  <a class=" readmore" asp-area="" asp-controller="Home" asp-action="GenAI" asp-fragment="genaitools1">Read More</a>
+            </p>
+        </div>
+        
+
+    </div>
+
+    <div class=" container padding gen genaiorg row justify-content-center mx-auto ">
+
+
+        <div class="container  indexcontainer col-md-6 col-sm-12 col-12">
+            <h5 class="subheading">GenAI Organisations</h5>
+            <p id="para1">
+                Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested
+                hundreds of millions of dollars and massive compute power to build the foundational
+                models on which services like ChatGPT and others depend.
+                <span class="italicize">Gartner</span><a class="readmore" asp-area="" asp-controller="Home" asp-action="GenAI" asp-fragment="genaiorg1">Read More</a>
+
+            </p>
+
+        </div>
+        <div class="container imgcontainer justify-content-center mx-auto col-md-6 col-sm-12 col-12">
+            <img src="~/images/genai/ms_thumbnail.jpg" alt="Microsoft" class="image">
+            <img src="~/images/genai/google_thumbnail.jpg" alt="Google" class="image">
+        </div>
+        
+    </div>
+
+    <div class="container padding row gen genaiapp justify-content-center mx-auto ">
+        <div class="container imgcontainer justify-content-center mx-auto col-md-6 col-sm-12 col-12">
+            <img src="~/images/genai/chatgpt_thumbnail.jpg" alt="ChatGPT" class="image">
+            <img src="~/images/genai/dalle_thumbnail.jpg" alt="Dall-E" class="image">
+        </div>
+        <div class="container indexcontainer col-md-6 col-sm-12 col-12">
+            <h5 class="subheading">GenAI Applications</h5>
+            <p id="para1">
+                <ul id="para1">Text: GPT-3, LaMDA, LLaMA, BLOOM and GPT-4.</ul>
+                <ul id="para1">Code: OpenAI Codex.</ul>
+                <ul id="para1">Images: DALL-E, Midjourney and Stable Diffusion.</ul>
+                <ul id="para1">Video: Make-A-Video (Meta Platforms). <span class="italicize">Wikipedia </span> <a class="readmore" asp-area="" asp-controller="Home" asp-action="GenAI" asp-fragment="genaiapp1">Read More</a> </ul>
+           
+            </p>
+        </div>
+        
+
+    </div>
+
+    <div class="container padding gen aijobs row justify-content-center mx-auto ">
+        <div class="container imgcontainer justify-content-center mx-auto col-md-6 col-sm-12 col-12">
+            <img src="~/images/genaisites/pie.jpg" alt="Pie" class="image">
+            <img src="~/images/genaisites/job.jpg" alt="Job" class="image">
+        </div>
+        <div class="container indexcontainer col-md-6 col-sm-12 col-12">
+            <h5 class="subheading">AI Jobs</h5>
+            <p id="para1">
+                Prime source for jobs and talents in AI, ML, Data Science and Big Data: Insights AIJobs
+                Python source for tables and charts: <a href="https://www.kaggle.com/code/sowrabhghosh/data-science-salary-2020-22-analysis" class="navintext italicize">Kaggle.</a>
+                <a class="readmore" asp-area="" asp-controller="Home" asp-action="Jobs">Read More</a>
+            </p>
+        </div>
+        
+
+    </div>
+
+    <div class="container padding justify-content-center mx-auto">
+        <h5 class="subheading central">List of Generative AI Websites</h5>
+
+        @{
+            if (User.Identity.IsAuthenticated)
+            {
+                <p>
+                    <a asp-area="" asp-controller="AddNewGenAIs" asp-action="Create" class="text1 justify-content-center mx-auto">Click here to add a new generative AI website</a>
+                </p>
+            }
+            else
+            {
+                <p class="para1 text-white paracentral">Please <a class="para1 text-white" asp-area="Identity" asp-page="/Account/Register">Register</a> or <a class="para1 text-white" asp-area="Identity" asp-page="/Account/Login">Login</a> to add a new generative AI Website.</p>
+            }
+        }
+
+
+        
+       
+
+    </div>
+    @model IEnumerable<FINALWEBDEV_u3233707.Models.AddNewGenAI>
+    <div class="container-fluid row">
+         @{
+            if (User.Identity.IsAuthenticated){
+        foreach (var item in Model) 
+        {
+            <div class="container bottomcontainer col-md-2 col-sm-4 col-12">
+            <a asp-area="" asp-controller="AddNewGenAIs" asp-action="Index" asp-fragment="@item.Id">
+                <div class="container bottomsitescontainer justify-content-center mx-auto" >
+                    <div class="bottomsitesoverlay">
+                            <p class="text-black sitestopic nospace">@item.GenAIName</p>
+                    </div>
+                    <img class="sitesimg" src="@Url.Content(item.AnchorLink)" alt="Uploaded Image" />
+                </div>
+            </a>
+            </div>
+
+        }
+        }
+            }
+    </div>
+
+    <div class="bottompadding"></div>
+
+
+
+</div>
+
+
+
